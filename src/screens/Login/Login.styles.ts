@@ -29,6 +29,11 @@ const Wrapper = styled.div`
       justify-content: center;
     }
 
+    @media (min-width: 1366px) {
+      width: 45%;
+      margin-left: 55%;
+    }
+
     &__content {
       width: 311px;
       height: 357px;
@@ -103,6 +108,11 @@ const BgImage = styled.div`
 
   @media (min-width: 768px) {
     width: 40%;
+    height: 100vh;
+  }
+
+  @media (min-width: 1366px) {
+    width: 55%;
     height: 100vh;
   }
 
