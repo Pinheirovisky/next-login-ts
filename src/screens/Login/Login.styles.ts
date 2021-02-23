@@ -83,7 +83,7 @@ const Wrapper = styled.div`
           cursor: pointer;
 
           @media (min-width: 768px) {
-            margin-top: 20px;
+            margin-top: 30px;
             width: 300px;
             box-shadow: 0px 10px 25px #cf99db;
           }
