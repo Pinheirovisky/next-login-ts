@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import Error from '../Icons/Error/Error';
+
 // Styles
 import Wrapper from './Input.styles';
 
@@ -9,6 +12,8 @@ interface Props {
   id: string;
   label?: string;
   placeholder?: string;
+  error?: boolean;
+  msg?: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -17,12 +22,16 @@ const Input: React.FC<Props> = ({
   id,
   label,
   placeholder = '',
+  error = false,
+  msg,
 }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper error={error}>
       <label htmlFor={id}>
         {label && <span>{label}</span>}
         <input type={type} name={name} id={id} placeholder={placeholder} />
+        <p>{msg}</p>
+        {error && <Error />}
       </label>
     </Wrapper>
   );

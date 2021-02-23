@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
       &__data {
         position: relative;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,12 +48,21 @@ const Wrapper = styled.div`
           background-image: linear-gradient(to right, #9d25b0, #383e71);
           border: 1px solid transparent;
           border-radius: 8px;
+          transition: 300ms all;
+
+          &:hover {
+            opacity: 0.85;
+          }
         }
       }
 
       &__links {
         text-align: center;
         margin-top: 50px;
+
+        a {
+          text-decoration: underline;
+        }
       }
     }
   }

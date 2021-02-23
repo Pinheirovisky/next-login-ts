@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  error: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   label {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 15px 0 0 0;
@@ -10,14 +15,14 @@ const Wrapper = styled.div`
       font-size: 12px;
       font-weight: 400;
       color: #383e71;
-      margin: 0 10px 10px 0;
+      margin: 0 0 5px 10px;
     }
 
     input {
       width: 256px;
       height: 48px;
       background-color: #faf5ff;
-      border: 1px solid #989fdb;
+      border: 1px solid ${(props) => (props.error ? '#FF377F' : '#989fdb')};
       border-radius: 8px;
       padding: 0 10px;
     }
@@ -37,6 +42,17 @@ const Wrapper = styled.div`
     input:-moz-placeholder {
       /* Firefox 18- */
       color: #989fdb;
+    }
+
+    p {
+      margin: 5px 0 0 10px;
+      color: #ff377f;
+    }
+
+    svg {
+      position: absolute;
+      right: 12px;
+      top: 40px;
     }
   }
 `;

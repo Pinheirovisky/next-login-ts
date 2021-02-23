@@ -12,9 +12,9 @@ const Form: React.FC = () => {
         placeholder="user.name@mail.com"
       />
       <Input
-        type="email"
-        name="email"
-        id="email"
+        type="password"
+        name="password"
+        id="password"
         label="SENHA"
         placeholder="******"
       />
