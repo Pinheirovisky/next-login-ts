@@ -8,6 +8,13 @@ const Wrapper = styled.div`
     width: 139px;
     text-align: center;
     color: #383e71;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+      line-height: 48px;
+      text-align: start;
+      width: 231px;
+    }
   }
 
   h4 {
@@ -18,6 +25,12 @@ const Wrapper = styled.div`
     width: 255px;
     color: #989fdb;
     margin-top: 16px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      text-align: start;
+      width: 222px;
+    }
   }
 
   h3 {
@@ -28,6 +41,10 @@ const Wrapper = styled.div`
     width: 100%;
     color: #fff;
     margin: 0;
+
+    @media (min-width: 768px) {
+      color: #989fdb;
+    }
   }
 `;
 

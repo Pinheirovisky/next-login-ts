@@ -25,6 +25,10 @@ const Wrapper = styled.div<WrapperProps>`
       border: 1px solid ${(props) => (props.error ? '#FF377F' : '#989fdb')};
       border-radius: 8px;
       padding: 0 10px;
+
+      @media (min-width: 768px) {
+        width: 360px;
+      }
     }
 
     input::-webkit-input-placeholder {

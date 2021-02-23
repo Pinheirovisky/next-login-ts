@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   background-color: #130525;
   position: relative;
 
+  @media (min-width: 768px) {
+    background-color: #faf5ff;
+  }
+
   .main {
     position: absolute;
     left: 0;
@@ -19,9 +23,19 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media (min-width: 768px) {
+      width: 60%;
+      margin-left: 40%;
+      justify-content: center;
+    }
+
     &__content {
       width: 311px;
       height: 357px;
+
+      @media (min-width: 768px) {
+        width: 360px;
+      }
 
       &__data {
         position: relative;
@@ -36,6 +50,12 @@ const Wrapper = styled.div`
         border: 1px solid #faf5ff;
         border-radius: 8px;
 
+        @media (min-width: 768px) {
+          align-items: flex-start;
+          width: 360px;
+          padding-bottom: 20px;
+        }
+
         button {
           position: absolute;
           width: 168px;
@@ -49,6 +69,12 @@ const Wrapper = styled.div`
           border: 1px solid transparent;
           border-radius: 8px;
           transition: 300ms all;
+
+          @media (min-width: 768px) {
+            margin-top: 20px;
+            width: 360px;
+            box-shadow: 0px 10px 25px #cf99db;
+          }
 
           &:hover {
             opacity: 0.85;
@@ -72,7 +98,14 @@ const BgImage = styled.div`
   width: 100%;
   height: 60vh;
   position: relative;
+  background-color: #130525;
   background-image: url('/assets/bg-mobile.jpeg');
+
+  @media (min-width: 768px) {
+    width: 40%;
+    height: 100vh;
+  }
+
   background-position: center;
   background-size: cover;
 

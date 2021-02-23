@@ -13,7 +13,7 @@ const Login: React.FC = () => {
         <div className="main__content">
           <div className="main__content__data">
             <Text as="h1">Olá, seja bem-vindo!</Text>
-            <Text as="h4">Para acessar a plataform, faça seu login.</Text>
+            <Text as="h4">Para acessar a plataforma, faça seu login.</Text>
             <Form />
             <button type="submit">ENTRAR</button>
           </div>

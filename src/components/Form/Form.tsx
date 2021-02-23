@@ -1,9 +1,14 @@
 import React from 'react';
+
+// Components
 import Input from '../Input/Input';
+
+// Styles
+import Wrapper from './Form.styles';
 
 const Form: React.FC = () => {
   return (
-    <form className="form" action="post">
+    <Wrapper className="form" action="post">
       <Input
         type="email"
         name="email"
@@ -18,7 +23,7 @@ const Form: React.FC = () => {
         label="SENHA"
         placeholder="******"
       />
-    </form>
+    </Wrapper>
   );
 };
 
