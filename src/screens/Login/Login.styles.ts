@@ -37,6 +37,7 @@ const Wrapper = styled.div`
         h1 {
           font-size: 24px;
           line-height: 32px;
+          font-weight: 400;
           width: 139px;
           text-align: center;
           color: #383e71;
@@ -45,8 +46,9 @@ const Wrapper = styled.div`
         h4 {
           font-size: 12px;
           line-height: 20px;
+          font-weight: 700;
           text-align: center;
-          width: 255;
+          width: 255px;
           color: #989fdb;
           margin: 16px 0 20px 0;
         }
@@ -59,7 +61,7 @@ const BgImage = styled.div`
   width: 100%;
   height: 60vh;
   position: relative;
-  background-image: url('./bg-mobile.jpeg');
+  background-image: url('/assets/bg-mobile.jpeg');
   background-position: center;
   background-size: cover;
 

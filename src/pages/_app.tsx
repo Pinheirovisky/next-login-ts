@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppProps } from 'next/app';
+import '../styles/reset.css';
 
 // Themes
 import { createGlobalStyle } from 'styled-components';

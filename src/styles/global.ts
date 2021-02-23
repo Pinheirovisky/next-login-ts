@@ -37,6 +37,7 @@ const Global = css`
   blockquote,
   dl,
   dd {
+    font-family: 'Montserrat';
     margin: 0;
   }
 
