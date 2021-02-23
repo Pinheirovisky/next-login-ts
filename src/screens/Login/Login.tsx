@@ -1,19 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 
-// Screens
-import { Login } from '../screens';
-
-const Home: React.FC = () => {
+const Login: React.FC = () => {
   return (
     <div>
       <Head>
         <title>Login</title>
       </Head>
 
-      <Login />
+      <main>
+        <h1>Login</h1>
+      </main>
     </div>
   );
 };
 
-export default Home;
+export default Login;
