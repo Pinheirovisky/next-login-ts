@@ -27,7 +27,7 @@ const Wrapper = styled.div<WrapperProps>`
       padding: 0 10px;
 
       @media (min-width: 768px) {
-        width: 360px;
+        width: 300px;
       }
     }
 

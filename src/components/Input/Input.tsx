@@ -22,8 +22,8 @@ const Input: React.FC<Props> = ({
   id,
   label,
   placeholder = '',
-  error = false,
-  msg,
+  error = true,
+  msg = 'Campo inválido',
 }: Props) => {
   return (
     <Wrapper error={error}>

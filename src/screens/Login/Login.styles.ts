@@ -39,7 +39,8 @@ const Wrapper = styled.div`
       height: 357px;
 
       @media (min-width: 768px) {
-        width: 360px;
+        width: 300px;
+        height: 400px;
       }
 
       &__data {
@@ -57,8 +58,13 @@ const Wrapper = styled.div`
 
         @media (min-width: 768px) {
           align-items: flex-start;
-          width: 360px;
+          width: 300px;
+          height: 400px;
           padding-bottom: 20px;
+
+          h4 {
+            margin-bottom: 30px;
+          }
         }
 
         button {
@@ -74,10 +80,11 @@ const Wrapper = styled.div`
           border: 1px solid transparent;
           border-radius: 8px;
           transition: 300ms all;
+          cursor: pointer;
 
           @media (min-width: 768px) {
             margin-top: 20px;
-            width: 360px;
+            width: 300px;
             box-shadow: 0px 10px 25px #cf99db;
           }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 // Components
 import { Form, Text } from '../../components';
@@ -20,7 +21,10 @@ const Login: React.FC = () => {
           <div className="main__content__links">
             <Text as="h3">Esqueceu seu login ou senha?</Text>
             <Text as="h3">
-              Clique <a href="/">aqui</a>
+              Clique{' '}
+              <Link href={`/`}>
+                <a>aqui</a>
+              </Link>
             </Text>
           </div>
         </div>
