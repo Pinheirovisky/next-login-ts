@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import { Form, Text } from '../../components';
+
 // Styles
 import { BgImage, Wrapper } from './Login.styles';
 
@@ -9,24 +12,17 @@ const Login: React.FC = () => {
       <div className="main">
         <div className="main__content">
           <div className="main__content__data">
-            <h1>Olá, seja bem-vindo!</h1>
-            <h4>Para acessar a plataform, faça seu login.</h4>
-            <form className="form">
-              <div className="form__input">
-                <label htmlFor="email">
-                  <input type="email" id="email" />
-                </label>
-              </div>
-              <div className="form__input">
-                <label htmlFor="password">
-                  <input type="password" id="password" />
-                </label>
-              </div>
-            </form>
-            <button type="submit">entrar</button>
+            <Text as="h1">Olá, seja bem-vindo!</Text>
+            <Text as="h4">Para acessar a plataform, faça seu login.</Text>
+            <Form />
+            <button type="submit">ENTRAR</button>
           </div>
-          <h3>Esqueceu seu login ou senha?</h3>
-          <h3>Clique aqui</h3>
+          <div className="main__content__links">
+            <Text as="h3">Esqueceu seu login ou senha?</Text>
+            <Text as="h3">
+              Clique <a href="/">aqui</a>
+            </Text>
+          </div>
         </div>
       </div>
       <BgImage />

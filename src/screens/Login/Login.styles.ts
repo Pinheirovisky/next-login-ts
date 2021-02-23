@@ -24,6 +24,8 @@ const Wrapper = styled.div`
       height: 357px;
 
       &__data {
+        position: relative;
+        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,24 +36,24 @@ const Wrapper = styled.div`
         border: 1px solid #faf5ff;
         border-radius: 8px;
 
-        h1 {
-          font-size: 24px;
-          line-height: 32px;
-          font-weight: 400;
-          width: 139px;
-          text-align: center;
-          color: #383e71;
+        button {
+          position: absolute;
+          width: 168px;
+          height: 48px;
+          bottom: -24px;
+          color: #ffffff;
+          font-size: 16px;
+          font-family: 'Montserrat';
+          box-shadow: 0px 10px 6px #000;
+          background-image: linear-gradient(to right, #9d25b0, #383e71);
+          border: 1px solid transparent;
+          border-radius: 8px;
         }
+      }
 
-        h4 {
-          font-size: 12px;
-          line-height: 20px;
-          font-weight: 700;
-          text-align: center;
-          width: 255px;
-          color: #989fdb;
-          margin: 16px 0 20px 0;
-        }
+      &__links {
+        text-align: center;
+        margin-top: 50px;
       }
     }
   }
