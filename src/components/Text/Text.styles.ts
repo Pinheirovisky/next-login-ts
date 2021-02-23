@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     line-height: 20px;
     font-weight: 600;
     text-align: center;
-    width: 255px;
+    /* width: 255px; */
     color: #989fdb;
     margin-top: 16px;
 
