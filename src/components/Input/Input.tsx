@@ -10,26 +10,44 @@ interface Props {
   type?: string;
   name: string;
   id: string;
+  value: string;
   label?: string;
   placeholder?: string;
   error?: boolean;
   msg?: string;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<Props> = ({
   type = 'text',
   name,
   id,
+  value = '',
   label,
   placeholder = '',
   error = true,
-  msg = 'Campo inválido',
+  msg,
+  ...props
 }: Props) => {
+  const enableInput = (event: React.FocusEvent<HTMLInputElement>): void => {
+    event.target.readOnly = false;
+  };
+
   return (
     <Wrapper error={error}>
       <label htmlFor={id}>
         {label && <span>{label}</span>}
-        <input type={type} name={name} id={id} placeholder={placeholder} />
+        <input
+          readOnly
+          type={type}
+          name={name}
+          id={id}
+          value={value}
+          placeholder={placeholder}
+          onFocus={enableInput}
+          {...props}
+        />
         <p>{msg}</p>
         {error && <Error />}
       </label>

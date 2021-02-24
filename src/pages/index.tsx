@@ -23,11 +23,11 @@ const Home: React.FC = () => {
         <title>Login</title>
       </Head>
 
-      <button onClick={() => dispatch(loadRequest())}>Search</button>
+      {/* <button onClick={() => dispatch(loadRequest())}>Search</button>
 
       {initialState.map((repo: Repository) => (
         <ul key={repo.id}>{repo.name}</ul>
-      ))}
+      ))} */}
 
       <Login />
     </div>
