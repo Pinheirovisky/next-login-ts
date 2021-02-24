@@ -54,7 +54,7 @@ const Login: React.FC = () => {
               touched={formik.touched}
             />
             <button type="submit" onClick={() => handleSubmit()}>
-              ENTRAR
+              <span>ENTRAR</span>
             </button>
           </div>
           <div className="main__content__links">
