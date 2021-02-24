@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppProps } from 'next/app';
+import App, { AppProps, AppInitialProps, AppContext } from 'next/app';
+import { wrapper } from '../store';
 import '../styles/reset.css';
 
 // Themes
@@ -12,13 +13,37 @@ const GlobalStyle = createGlobalStyle`
   ${Global}
 `;
 
-const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
-  return (
-    <div className="App">
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </div>
-  );
-};
+class MyApp extends App<AppInitialProps> {
+  public static getInitialProps = async ({
+    Component,
+    ctx,
+  }: AppContext): Promise<{
+    pageProps: {
+      pathname: string;
+    };
+  }> => {
+    return {
+      pageProps: {
+        // Call page-level getInitialProps
+        ...(Component.getInitialProps
+          ? await Component.getInitialProps(ctx)
+          : {}),
+        // Some custom thing for all pages
+        pathname: ctx.pathname,
+      },
+    };
+  };
 
-export default App;
+  public render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <div className="App">
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </div>
+    );
+  }
+}
+
+export default wrapper.withRedux(MyApp);
