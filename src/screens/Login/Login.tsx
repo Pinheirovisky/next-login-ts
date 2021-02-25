@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 
 // Validations
@@ -9,17 +10,17 @@ import * as Yup from 'yup';
 import { Form } from '../../containers';
 
 // Components
-import { Text } from '../../components';
+import { Button, Text } from '../../components';
+
+// Actions
+import * as authActions from '../../store/ducks/auth/actions';
 
 // Styles
 import { BgImage, Wrapper } from './Login.styles';
 
-export interface FormValues {
-  email: string;
-  password: string;
-}
-
 const Login: React.FC = () => {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -32,9 +33,7 @@ const Login: React.FC = () => {
       password: Yup.string().required('É obrigatório informar sua senha'),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      // setBlockedButton(true);
-      // dispatch(userActions.loginRequest({ data: { ...values, keepMeLogged } }));
+      dispatch(authActions.loginRequest(values));
     },
   });
 
@@ -53,9 +52,7 @@ const Login: React.FC = () => {
               errors={formik.errors}
               touched={formik.touched}
             />
-            <button type="submit" onClick={() => handleSubmit()}>
-              <span>ENTRAR</span>
-            </button>
+            <Button callbackFunc={handleSubmit} />
           </div>
           <div className="main__content__links">
             <Text as="h3">Esqueceu seu login ou senha?</Text>

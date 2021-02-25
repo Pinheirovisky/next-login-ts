@@ -26,7 +26,7 @@ const Input: React.FC<Props> = ({
   value = '',
   label,
   placeholder = '',
-  error = true,
+  error = false,
   msg,
   ...props
 }: Props) => {
@@ -36,7 +36,7 @@ const Input: React.FC<Props> = ({
 
   return (
     <Wrapper error={error}>
-      <label htmlFor={id}>
+      <label htmlFor={id} data-testid="input">
         {label && <span>{label}</span>}
         <input
           readOnly
@@ -48,7 +48,7 @@ const Input: React.FC<Props> = ({
           onFocus={enableInput}
           {...props}
         />
-        <p>{msg}</p>
+        {msg && <p>{msg}</p>}
         {error && <Error />}
       </label>
     </Wrapper>
