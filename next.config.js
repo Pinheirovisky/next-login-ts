@@ -25,5 +25,6 @@ module.exports = withSourceMaps({
     PROD_API_BASE_URL:
       process.env.PROD_API_BASE_URL ||
       'https://6036d89c54350400177214f8.mockapi.io/api/v1',
+    //
   },
 });
