@@ -1,10 +1,37 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  showBg: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   width: 100%;
   height: 100vh;
   background-color: #130525;
   position: relative;
+
+  ${(props) =>
+    props.showBg &&
+    `&:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    background-color: #000000b3;
+    animation: changeBG 1s;
+  }`}
+
+  @keyframes changeBG {
+    from {
+      background-color: transparent;
+    }
+    to {
+      background-color: #000000b3;
+    }
+  }
 
   @media (min-width: 768px) {
     background-color: #faf5ff;

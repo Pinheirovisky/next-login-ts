@@ -9,19 +9,23 @@ import * as Yup from 'yup';
 // Actions
 import * as authActions from '../../store/ducks/auth/actions';
 
+// Containers
+import { Auth, Form } from '../../containers'
+
 // Components
 import { Button, Text } from '../../components'
 
 // Styles
 import { BgImage, Wrapper } from './Login.styles';
-import NotAuth from './containers/NotAuth/NotAuth';
-import { ApplicationState } from '../../store';
 import { AuthUser } from '../../store/ducks/auth/types';
+import { ApplicationState } from '../../store';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
 
-  const authData: AuthUser = useSelector((state: ApplicationState) => state.auth.data);
+  const authData: AuthUser = useSelector(
+    (state: ApplicationState) => state.auth.data,
+  );
 
   const formik = useFormik({
     initialValues: {
@@ -36,32 +40,32 @@ const Login: React.FC = () => {
     }),
     onSubmit: (values) => {
       dispatch(authActions.loginRequest(values));
+      formik.resetForm()
     },
   });
 
   const { setFieldValue, handleSubmit } = formik;
 
-
   return (
-    <Wrapper>
+    <Wrapper showBg={!!authData}>
+      {authData && <Auth />}
       <div className="main">
         <div className="main__content">
-          {authData ? (
-            <div className="main__content__data">
-              <Text as="h1">{`Nome: ${authData.name}`}</Text>
-              <Text as="h1">{`País: ${authData.country}`}</Text>
-              <Text as="h1">{`Token: ${authData.token}`}</Text>
-              <Button callbackFunc={() => dispatch(authActions.logoutRequest())}>Sair</Button>
-            </div>
-          ) : (
-              <NotAuth
-                values={formik.values}
-                touched={formik.touched}
-                errors={formik.errors}
-                handleSubmit={handleSubmit}
-                setFieldValue={setFieldValue}
-              />
-            )}
+          <div className="main__content__data">
+            <Text as="h1">Olá, seja bem-vindo!</Text>
+            <Text as="h4">Para acessar a plataforma, faça seu login.</Text>
+            <Form
+              values={formik.values}
+              setFieldValue={setFieldValue}
+              errors={formik.errors}
+              touched={formik.touched}
+            />
+            <Button callbackFunc={handleSubmit}>ENTRAR</Button>
+          </div>
+          <div className="main__content__links">
+            <Text as="h3">Esqueceu seu login ou senha?</Text>
+            <Text as="h3">Clique aqui</Text>
+          </div>
         </div>
       </div>
       <BgImage />
