@@ -28,5 +28,15 @@ Projeto com nextJs, com o intuito de funcionar como teste em um processo seletiv
  ```
  
  ### Demo
+ 
+ ##### Link do projeto no ar
+ 
+ [Projeto](https://next-login-ts.vercel.app/)
+ 
+  ##### Tela de login - mobile
+ 
  ![demo](https://github.com/Pinheirovisky/next-login-ts/blob/main/public/assets/demo.png)
+ 
+  ##### Tela de auth - tablet
+ 
  ![demo2](https://github.com/Pinheirovisky/next-login-ts/blob/main/public/assets/demo2.png)
