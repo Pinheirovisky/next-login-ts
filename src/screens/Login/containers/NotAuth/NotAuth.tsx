@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 // Containers
 import { Form } from '../../../../containers';
@@ -42,12 +41,7 @@ const NotAuth: React.FC<NotAuthProps> = ({
       </div>
       <div className="main__content__links">
         <Text as="h3">Esqueceu seu login ou senha?</Text>
-        <Text as="h3">
-          Clique{' '}
-          <Link href={`/`}>
-            <a>aqui</a>
-          </Link>
-        </Text>
+        <Text as="h3">Clique aqui</Text>
       </div>
     </Wrapper>
   );
