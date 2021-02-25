@@ -2,7 +2,6 @@ import React from 'react';
 
 // Components
 import { Input } from '../../components';
-import { FormValues } from '../../screens/Login/Login';
 
 // Helpers
 import { polishingString } from '../../helpers/strings';
@@ -10,12 +9,13 @@ import { polishingString } from '../../helpers/strings';
 // Styles
 import Wrapper from './Form.styles';
 import { FormikErrors, FormikTouched } from 'formik';
+import { FormLoginValues } from '../../protocols/auth';
 
 type Props = {
-  values: FormValues;
+  values: FormLoginValues;
   setFieldValue: (label: string, value: string) => void;
-  errors: FormikErrors<FormValues>;
-  touched: FormikTouched<FormValues>;
+  errors: FormikErrors<FormLoginValues>;
+  touched: FormikTouched<FormLoginValues>;
 };
 
 const Form: React.FC<Props> = ({

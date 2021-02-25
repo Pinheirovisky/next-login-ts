@@ -5,6 +5,8 @@ export enum AuthTypes {
   LOGIN_REQUEST = '@auth/LOGIN_REQUEST',
   LOGIN_SUCCES = '@auth/LOGIN_SUCCES',
   LOGIN_FAILURE = '@auth/LOGIN_FAILURE',
+  //
+  LOGOUT_REQUEST = '@auth/LOGOUT_REQUEST',
 }
 
 /**
@@ -22,7 +24,7 @@ export interface AuthUser {
  * State types
  */
 export interface AuthState {
-  readonly data: AuthUser[];
+  readonly data: AuthUser;
   readonly loading: boolean;
   readonly error: boolean;
 }

@@ -1,25 +1,27 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Validations
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-// Containers
-import { Form } from '../../containers';
-
-// Components
-import { Button, Text } from '../../components';
-
 // Actions
 import * as authActions from '../../store/ducks/auth/actions';
 
+// Components
+import { Button, Text } from '../../components'
+
 // Styles
 import { BgImage, Wrapper } from './Login.styles';
+import NotAuth from './containers/NotAuth/NotAuth';
+import { ApplicationState } from '../../store';
+import { AuthUser } from '../../store/ducks/auth/types';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
+
+  const authData: AuthUser = useSelector((state: ApplicationState) => state.auth.data);
 
   const formik = useFormik({
     initialValues: {
@@ -39,30 +41,27 @@ const Login: React.FC = () => {
 
   const { setFieldValue, handleSubmit } = formik;
 
+
   return (
     <Wrapper>
       <div className="main">
         <div className="main__content">
-          <div className="main__content__data">
-            <Text as="h1">Olá, seja bem-vindo!</Text>
-            <Text as="h4">Para acessar a plataforma, faça seu login.</Text>
-            <Form
-              values={formik.values}
-              setFieldValue={setFieldValue}
-              errors={formik.errors}
-              touched={formik.touched}
-            />
-            <Button callbackFunc={handleSubmit} />
-          </div>
-          <div className="main__content__links">
-            <Text as="h3">Esqueceu seu login ou senha?</Text>
-            <Text as="h3">
-              Clique{' '}
-              <Link href={`/`}>
-                <a>aqui</a>
-              </Link>
-            </Text>
-          </div>
+          {authData ? (
+            <div className="main__content__data">
+              <Text as="h1">{`Nome: ${authData.name}`}</Text>
+              <Text as="h1">{`País: ${authData.country}`}</Text>
+              <Text as="h1">{`Token: ${authData.token}`}</Text>
+              <Button callbackFunc={() => dispatch(authActions.logoutRequest())}>Sair</Button>
+            </div>
+          ) : (
+              <NotAuth
+                values={formik.values}
+                touched={formik.touched}
+                errors={formik.errors}
+                handleSubmit={handleSubmit}
+                setFieldValue={setFieldValue}
+              />
+            )}
         </div>
       </div>
       <BgImage />

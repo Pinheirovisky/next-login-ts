@@ -5,12 +5,18 @@ import Wrapper from './Button.styles';
 
 interface ButtonProps {
   callbackFunc: () => void;
+  children: string;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ callbackFunc }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  callbackFunc,
+  children,
+  className = '',
+}: ButtonProps) => {
   return (
-    <Wrapper type="submit" onClick={() => callbackFunc()}>
-      <span>ENTRAR</span>
+    <Wrapper type="submit" className={className} onClick={() => callbackFunc()}>
+      <span>{children}</span>
     </Wrapper>
   );
 };

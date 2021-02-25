@@ -9,7 +9,7 @@ export function* login(data) {
   try {
     const response = yield call(authApi.login, { ...data });
 
-    yield put(loginSucces(response.data));
+    yield put(loginSucces({ ...response.data, email: data.email }));
   } catch (err) {
     yield put(loginFailure());
   }

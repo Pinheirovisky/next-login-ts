@@ -10,3 +10,5 @@ export const loginSucces = (data: AuthUser[]) =>
   action(AuthTypes.LOGIN_SUCCES, data);
 
 export const loginFailure = () => action(AuthTypes.LOGIN_FAILURE);
+
+export const logoutRequest = () => action(AuthTypes.LOGOUT_REQUEST);

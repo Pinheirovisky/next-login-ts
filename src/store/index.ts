@@ -1,13 +1,15 @@
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware } from 'redux';
-import { MakeStore, createWrapper, Context } from 'next-redux-wrapper';
+import { createWrapper } from 'next-redux-wrapper';
 import { RepositoriesState } from './ducks/repositories/types';
+import { AuthState } from './ducks/auth/types';
 
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
 
 export interface ApplicationState {
   repositories: RepositoriesState;
+  auth: AuthState;
 }
 
 export const configureStore = () => {
