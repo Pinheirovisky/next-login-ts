@@ -19,7 +19,7 @@ module.exports = withPlugins([
 module.exports = withSourceMaps({
   env: {
     MIRROR_API_BASE_URL:
-      process.env.MIRROR_API_BASE_URL || 'http://localhost:3000/api/v1',
+      process.env.MIRROR_API_BASE_URL || 'http://localhost:8080/api/v1',
     PROD_API_BASE_URL:
       process.env.PROD_API_BASE_URL ||
       'https://6036d89c54350400177214f8.mockapi.io/api/v1',

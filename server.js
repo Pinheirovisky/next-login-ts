@@ -14,10 +14,10 @@ app
 
     server.all('*', (req, res) => handle(req, res));
 
-    server.listen(3000, (err) => {
+    server.listen(8080, (err) => {
       if (err) throw err;
       // eslint-disable-next-line no-console
-      console.log(`> Ready on http://localhost:3000 [${process.env.NODE_ENV}]`);
+      console.log(`> Ready on http://localhost:8080 [${process.env.NODE_ENV}]`);
     });
   })
   .catch((ex) => {
